@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portal | Digital Service Competency Certification</title>
+<style>
+:root{--bg:#fff;--fg:#14231b;--mut:#5b6b62;--pri:#2563eb;--pri2:#1d4ed8;--bd:#dbe7df;--bg2:#f6faf7}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,sans-serif}
+.w{max-width:860px;margin:0 auto;padding:20px}
+header{border-bottom:1px solid var(--bd)}header .w{display:flex;justify-content:space-between;align-items:center;padding:12px 20px}
+a{color:var(--pri)}h1{font-size:22px;margin:0}h2{font-size:20px;margin:24px 0 10px}
+.card{border:1px solid var(--bd);border-radius:12px;padding:16px;margin:12px 0;background:#fff}
+label{display:block;font-size:14px;color:var(--mut);margin:10px 0 4px}
+input,select,textarea{width:100%;padding:10px;border:1px solid var(--bd);border-radius:8px;font:inherit}
+button,.btn{background:var(--pri);color:#fff;border:0;border-radius:8px;padding:10px 16px;font:inherit;font-weight:600;cursor:pointer}
+button:hover{background:var(--pri2)}button.o{background:#fff;color:var(--pri);border:1px solid var(--pri)}button.r{background:#b3261e}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.row>*{flex:1;min-width:140px}
+.badge{padding:2px 10px;border-radius:99px;font-size:12px;font-weight:700;background:var(--bg2);color:var(--pri)}
+.badge.rejected{color:#b3261e;background:#fdecea}.badge.draft{color:var(--mut)}
+.msg{padding:10px;border-radius:8px;margin:10px 0;background:#fdecea;color:#b3261e;display:none}.msg.ok{background:#e6f4ec;color:var(--pri)}
+.tabs{display:flex;gap:8px;margin-bottom:8px}.tabs button{flex:1}
+.doc{display:flex;justify-content:space-between;gap:8px;padding:6px 0;border-bottom:1px solid var(--bd);font-size:14px}
+.doc button{padding:2px 10px;font-size:13px}small{color:var(--mut)}
+body{background:#f7f8fa}
+.lcard{max-width:440px;margin:16px auto;background:#fff;border-radius:14px;padding:26px;box-shadow:0 2px 14px rgba(0,0,0,.08)}
+.lt{text-align:center;color:#0a6ebd;font-size:32px;margin:0}.ls{text-align:center;color:#5b6b62;margin:12px 0 22px}
+.lcard label{font-size:16px;color:#222;margin:14px 0 6px;display:block}
+.lcard .li{width:100%;min-width:0;padding:14px;border-radius:8px;border:1px solid #d6dbe0;font:inherit;background:#fff;color:#14231b}
+.fp{text-align:right;margin-top:12px}.fp a{color:#0d4a5e;text-decoration:none}
+.lcard .msg{text-align:center;margin-top:18px}
+.lb{display:block;width:100%;background:#0a6ebd;color:#fff;border:0;padding:15px;font:inherit;font-size:18px;font-weight:600;border-radius:8px;cursor:pointer}.lb:hover{background:#085a9c}
+.or{display:flex;align-items:center;gap:12px;color:#5b6b62;margin:22px 0}.or:before,.or:after{content:"";flex:1;height:1px;background:#dbe7df}
+.gbtn{display:flex;width:100%;gap:10px;justify-content:center;align-items:center;background:#fff;color:#222;border:1px solid #d6dbe0;padding:13px;border-radius:8px;font:inherit;font-weight:600;cursor:pointer}.gbtn:hover{background:#f3f4f6}
+.sw{text-align:center;margin:20px 0 0}.sw a{color:#0d4a5e;font-weight:700;text-decoration:none}
+.pt{text-align:center;color:#0a6ebd;font-size:24px;line-height:1.4;margin:28px 0 18px}
+.sc{box-shadow:0 4px 14px rgba(0,0,0,.18)!important;padding:30px 26px!important}
+.tbox{margin-top:22px;background:#f7f9fb;border:1px dashed #5aa0c8;border-radius:16px;padding:22px}
+.tbox label{margin:0 0 8px!important;font-size:16px}
+.trow{display:flex;gap:10px;align-items:stretch}.trow .li{flex:1;width:auto;min-width:0;padding:12px}
+.tb{flex:none;background:linear-gradient(180deg,#0a77c4,#05508f);color:#fff;border:0;border-radius:10px;padding:12px 16px;font:inherit;font-weight:600;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.25)}
+.nb{display:block;width:100%;margin-top:26px;background:#fff;color:#0e6e9e;border:2px solid #0e6e9e;border-radius:10px;padding:16px;font:inherit;font-size:18px;cursor:pointer}.nb:hover{background:#eef6fb}
+footer.pf{border-top:3px solid #e8832a;margin-top:60px;padding:24px 20px;text-align:center;color:#5b6b62;font-size:14px;background:#fff}
+.rg{max-width:520px}.fbox{background:#f8f8f8;border:1px dashed #d6dbe0;border-radius:8px;padding:10px}
+.fbox input{border:0!important;padding:0!important;width:auto!important;min-width:0!important;background:none!important}
+.lcard select.li{background:#efefef}
+.agree{display:flex!important;gap:10px;align-items:center;margin-top:22px!important}
+.agree input{width:auto!important;min-width:0!important;padding:0!important;flex:none;height:22px;width:22px!important}.agree a{color:#0a6ebd}
+.pill{border-radius:999px!important;margin-top:18px!important}
+.ibox{background:linear-gradient(180deg,#e8f3fd,#bfdcf7);border:1px solid #7ab6e8;border-radius:14px;padding:18px 18px 18px 58px;position:relative;margin-bottom:10px}
+.ibox:before{content:"i";position:absolute;left:18px;top:22px;width:26px;height:26px;border-radius:13px;background:#0d3b7a;color:#fff;text-align:center;line-height:26px;font-weight:700;font-style:italic}
+.ibox h3{margin:0 0 6px;color:#0d3b7a;font-size:19px}.ibox p{margin:0 0 14px;color:#2a5a86}
+.ibox button{background:#fff;color:#0d3b7a;border:2px solid #0d3b7a;border-radius:8px;padding:10px 18px;font:inherit;font-weight:600;cursor:pointer}
+</style>
+</head>
+<body>
+<header><div class="w"><h1><a href="/" style="text-decoration:none">← Digital Service Competency Certification</a></h1><div id="who"></div></div></header>
+<div class="w"><div id="msg" class="msg"></div><div id="app"></div></div>
+<script>
+const $ = s => document.querySelector(s);
+let token = localStorage.getItem('t'), me = null, mode = location.search.includes('signup') ? 'tin' : 'login';
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+function flash(t, ok) { const m = $('#msg'); m.textContent = t; m.className = 'msg' + (ok ? ' ok' : ''); m.style.display = t ? 'block' : 'none'; if (t) scrollTo(0, 0); }
+
+async function api(p, o = {}) {
+  const h = { ...(o.headers || {}) };
+  if (token) h.Authorization = 'Bearer ' + token;
+  if (o.json) { h['Content-Type'] = 'application/json'; o.body = JSON.stringify(o.json); }
+  const r = await fetch('/api' + p, { ...o, headers: h });
+  if (o.blob && r.ok) return r.blob();
+  const d = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(d.error || 'Request failed');
+  return d;
+}
+async function download(p, name) {
+  const b = await api(p, { blob: true }), u = URL.createObjectURL(b), a = document.createElement('a');
+  a.href = u; a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(u), 5000);
+}
+const run = fn => fn().catch(e => flash(e.message));
+
+function setSession(d) { token = d.token; me = d.user; localStorage.setItem('t', token); render(); }
+function logout() { token = null; me = null; localStorage.removeItem('t'); render(); }
+
+async function render() {
+  flash('');
+  $('#who').innerHTML = me ? `${esc(me.email)} <button class="o" data-act="logout">Sign out</button>` : '';
+  if (!me && token) { try { me = (await api('/me')).user; } catch { token = null; } }
+  if (!me) return renderAuth();
+  me.role === 'admin' ? renderAdmin() : renderCompany();
+}
+
+function renderReg() {
+  const t = sessionStorage.getItem('tin') || '';
+  $('#app').innerHTML = `<h1 class="pt">E-Commerce / Intra-platform Operators Registration</h1><div class="lcard rg"><div class="ibox" id="banner"></div><form id="regf"><label>Company Logo</label><div class="fbox"><input type="file" name="logo" accept=".png,.jpg,.jpeg"></div><label>Full Name *</label><input class="li" name="full_name" type="text" maxlength="80" placeholder="Your Full Name" required><label>Manager Full Name *</label><input class="li" name="manager" type="text" maxlength="80" placeholder="Manager Full Name" required><label>Company Name *</label><input class="li" name="company" type="text" maxlength="80" placeholder="Company Name" required><label>Fayda ID</label><input class="li" name="fayda" type="text" maxlength="80" placeholder="Fayda ID"><label>Legal Condition *</label><select class="li" name="legal" required><option value="">Select</option><option>Private Limited Company</option><option>Share Company</option><option>Sole Proprietorship</option><option>Partnership</option><option>Public Enterprise</option><option>Non-Governmental Organization</option><option>Other</option></select><label>Zone / Sub City *</label><select class="li" name="zone" required><option value="">Select Zone</option><option>Addis Ketema</option><option>Akaky Kaliti</option><option>Arada</option><option>Bole</option><option>Gullele</option><option>Kirkos</option><option>Kolfe Keranio</option><option>Lideta</option><option>Nifas Silk-Lafto</option><option>Yeka</option><option>Lemi Kura</option><option>Other</option></select><label>Kebele</label><input class="li" name="kebele" type="text" maxlength="80" placeholder="Kebele"><label>Tin No (Optional)</label><input class="li" name="tin" id="r_tin" type="text" maxlength="80" placeholder="Enter TIN (Optional)"><label>Mobile Phone *</label><input class="li" name="phone" type="tel" maxlength="80" placeholder="Phone" required><label>የስራ አስኪያጅ ስም በአማርኛ *</label><input class="li" name="manager_am" type="text" maxlength="80" placeholder="የስራ አስኪያጅ ስም በአማርኛ" required><label>የካምፓኒው ስም በአማርኛ *</label><input class="li" name="company_am" type="text" maxlength="80" placeholder="የካምፓኒው ስም በአማርኛ" required><label>Email *</label><input class="li" name="email" type="email" maxlength="80" placeholder="Email" required><label>Region *</label><select class="li" name="region" required><option value="">Select Region</option><option>Addis Ababa</option><option>Afar</option><option>Amhara</option><option>Benishangul-Gumuz</option><option>Central Ethiopia</option><option>Dire Dawa</option><option>Gambela</option><option>Harari</option><option>Oromia</option><option>Sidama</option><option>Somali</option><option>South Ethiopia</option><option>South West Ethiopia</option><option>Tigray</option></select><label>Woreda</label><select class="li" name="woreda"><option value="">Select Woreda</option><option>Woreda 1</option><option>Woreda 2</option><option>Woreda 3</option><option>Woreda 4</option><option>Woreda 5</option><option>Woreda 6</option><option>Woreda 7</option><option>Woreda 8</option><option>Woreda 9</option><option>Woreda 10</option><option>Woreda 11</option><option>Woreda 12</option><option>Woreda 13</option><option>Woreda 14</option><option>Woreda 15</option><option>Other</option></select><label>Password * (for your portal login)</label><input class="li" name="password" type="password" minlength="8" required placeholder="At least 8 characters"><div id="rerr" class="msg"></div><label class="agree"><input type="checkbox" name="terms" required><span>I agree with the <a href="#" data-act="terms">terms and conditions</a></span></label><button class="lb pill">Register</button></form></div>`;
+  const b = $('#banner');
+  if (t) { b.innerHTML = '<h3>TIN provided</h3><p></p>'; b.querySelector('p').textContent = 'TIN ' + t + ' will be used for your registration.'; }
+  else b.innerHTML = '<h3>Registering without TIN</h3><p>You can fill out the form manually. If you have a TIN, you can go back to verify and auto-populate.</p><button type="button" data-act="provide">Provide TIN</button>';
+  $('#r_tin').value = t;
+}
+function renderAuth() {
+  $('#who').innerHTML = '';
+  if (mode === 'register') return renderReg();
+  if (mode === 'tin') {
+    $('#app').innerHTML = `<h1 class="pt">E-Commerce / Intra-platform Operators Registration</h1>
+      <div class="lcard sc"><h1 class="lt">Signup</h1>
+      <div class="tbox"><label>Tin NO</label>
+        <div class="trow"><input id="tin" class="li" placeholder="Enter TIN" inputmode="numeric" maxlength="20"><button class="tb" data-act="tinsignup">signup with TIN</button></div>
+        <div id="autherr" class="msg"></div>
+        <button class="nb" data-act="notin">Continue Without Tin</button></div>
+      <p class="sw">Already have an account? <a href="#" data-act="mode" data-m="login">Login</a></p></div>`;
+    return;
+  }
+  const L = mode === 'login', t = sessionStorage.getItem('tin');
+  $('#app').innerHTML = `<div class="lcard"><h1 class="lt">${L ? 'Login' : 'Create account'}</h1>
+    <p class="ls">${L ? 'Welcome Back' : 'Register your company' + (t ? ' · TIN ' + esc(t) : '')}</p>
+    <form id="authf"><label>Email address</label><input class="li" name="email" type="email" required placeholder="Enter your email" autocomplete="email">
+    <label>Password</label><input class="li" name="password" type="password" required minlength="8" placeholder="${L ? 'Enter your password' : 'At least 8 characters'}" autocomplete="${L ? 'current-password' : 'new-password'}">
+    ${L ? '<div class="fp"><a href="#" data-act="forgot">Forgot Password?</a></div>' : ''}
+    <div id="autherr" class="msg"></div>
+    <button class="lb" style="margin-top:14px">${L ? 'Login' : 'Create account'}</button></form>
+    <div class="or"><span>or</span></div>
+    <button class="gbtn" data-act="google"><svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.7 6c4.5-4.2 7-10.3 7-17.7z"/><path fill="#FBBC05" d="M10.5 28.7c-.5-1.5-.8-3-.8-4.7s.3-3.2.8-4.7l-7.9-6.1C.9 16.4 0 20.1 0 24s.9 7.6 2.6 10.8l7.9-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.7-6c-2.2 1.5-5 2.3-8.2 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.9 6.1C6.5 42.6 14.6 48 24 48z"/></svg> ${L ? 'Login' : 'Sign up'} with Google</button>
+    <p class="sw">${L ? "You don't have an account yet?" : 'Already have an account?'} <a href="#" data-act="mode" data-m="${L ? 'tin' : 'login'}">${L ? 'Sign up' : 'Login'}</a></p></div>`;
+}
+const authmsg = t => { const m = $('#autherr'); m.textContent = t; m.style.display = 'block'; };
+
+const kinds = { trade_license: 'Trade license', tax_credential: 'Tax credential', technical: 'Technical document', other: 'Other' };
+const appForm = (a = {}) => `<form class="appf" data-id="${a.id || ''}">
+  <label>Company name</label><input name="company" required value="${esc(a.company)}">
+  <div class="row"><div><label>Sector</label><input name="sector" value="${esc(a.sector)}"></div>
+  <div><label>Website</label><input name="website" value="${esc(a.website)}"></div></div>
+  <div class="row"><div><label>Trade license no.</label><input name="trade_license_no" value="${esc(a.trade_license_no)}"></div>
+  <div><label>TIN</label><input name="tin" value="${esc(a.tin)}"></div></div>
+  <label>What does your digital service do?</label><textarea name="description" rows="3">${esc(a.description)}</textarea>
+  <div class="row"><button>${a.id ? 'Save details' : 'Create application'}</button></div></form>`;
+
+async function renderCompany() {
+  const apps = await api('/applications/mine');
+  $('#app').innerHTML = `<h2>My applications</h2>` + (apps.map(a => {
+    const ed = a.status === 'draft' || a.status === 'rejected';
+    return `<div class="card"><b>${esc(a.company)}</b> <span class="badge ${a.status}">${a.status}</span>
+      ${a.cert_no ? `<br><small>Certificate ${esc(a.cert_no)}</small>` : ''}
+      ${a.note ? `<p><small>Reviewer note:</small> ${esc(a.note)}</p>` : ''}
+      <h3 style="font-size:15px;margin:12px 0 4px">Documents</h3>
+      ${a.documents.map(d => `<div class="doc"><span>${kinds[d.kind] || d.kind}: ${esc(d.original_name)}</span>
+        <span><button class="o" data-act="dl" data-id="${d.id}" data-n="${esc(d.original_name)}">Download</button>
+        ${ed ? `<button class="o r" data-act="deldoc" data-id="${d.id}" style="color:#b3261e;border-color:#b3261e">Remove</button>` : ''}</span></div>`).join('') || '<small>None yet</small>'}
+      ${ed ? `<form class="upf" data-id="${a.id}"><div class="row"><select name="kind">${Object.entries(kinds).map(([k, v]) => `<option value="${k}">${v}</option>`).join('')}</select>
+        <input type="file" name="file" accept=".pdf,.png,.jpg,.jpeg" required><button class="o">Upload</button></div></form>
+        <details style="margin-top:10px"><summary>Edit details</summary>${appForm(a)}</details>
+        <div class="row"><button data-act="submit" data-id="${a.id}">Submit for review</button></div>` : ''}
+      ${a.status === 'approved' ? `<div class="row"><button data-act="cert" data-id="${a.id}" data-n="${a.cert_no}">Download certificate (PDF)</button></div>` : ''}</div>`;
+  }).join('') || '<small>No applications yet.</small>') + `<h2>New application</h2><div class="card">${appForm({ tin: sessionStorage.getItem('tin') || '' })}</div>`;
+}
+
+async function renderAdmin() {
+  const [apps, news] = await Promise.all([api('/admin/applications'), api('/news')]);
+  $('#app').innerHTML = `<h2>Applications for review</h2>` + (apps.map(a => `<div class="card">
+    <b>${esc(a.company)}</b> <span class="badge ${a.status}">${a.status}</span><br>
+    <small>${esc(a.email)} · ${esc(a.sector)} · License ${esc(a.trade_license_no)} · TIN ${esc(a.tin)} · ${esc(a.website)}</small>
+    <p>${esc(a.description)}</p>
+    ${a.documents.map(d => `<div class="doc"><span>${kinds[d.kind] || d.kind}: ${esc(d.original_name)}</span>
+      <button class="o" data-act="dl" data-id="${d.id}" data-n="${esc(d.original_name)}">Download</button></div>`).join('')}
+    ${a.status === 'submitted' ? `<label>Note (required to reject)</label><input id="n${a.id}">
+      <div class="row"><button data-act="approve" data-id="${a.id}">Approve</button><button class="r" data-act="reject" data-id="${a.id}">Reject</button></div>`
+      : `<small>${a.cert_no ? esc(a.cert_no) + ' · ' : ''}${esc(a.note)}</small>`}</div>`).join('') || '<small>Nothing to review.</small>') +
+    `<h2>News</h2><div class="card"><form id="newsf"><label>Title</label><input name="title" required><label>Body</label><textarea name="body" rows="3" required></textarea>
+    <div class="row"><button>Publish</button></div></form></div>` +
+    news.map(n => `<div class="card"><b>${esc(n.title)}</b> <button class="o" data-act="delnews" data-id="${n.id}">Delete</button><br><small>${esc(n.created_at)}</small></div>`).join('');
+}
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-act]'); if (!b) return;
+  const id = b.dataset.id, act = b.dataset.act;
+  e.preventDefault();
+  if (act === 'forgot') return authmsg("Password reset isn't available yet. Please contact the administrator.");
+  if (act === 'google') return authmsg("Google sign-in isn't set up yet. Use your email and password.");
+  if (act === 'provide') { mode = 'tin'; return renderAuth(); }
+  if (act === 'terms') return flash('The terms and conditions page is not set up yet.');
+  if (act === 'tinsignup') {
+    const v = $('#tin').value.trim();
+    if (!/^[0-9A-Za-z]{6,20}$/.test(v)) return authmsg('Enter a valid TIN.');
+    sessionStorage.setItem('tin', v); mode = 'register'; return renderAuth();
+  }
+  if (act === 'notin') { sessionStorage.removeItem('tin'); mode = 'register'; return renderAuth(); }
+  if (act === 'logout') return logout();
+  if (act === 'mode') { mode = b.dataset.m; return renderAuth(); }
+  run(async () => {
+    if (act === 'dl') return download(`/documents/${id}/file`, b.dataset.n);
+    if (act === 'cert') return download(`/applications/${id}/certificate`, b.dataset.n + '.pdf');
+    if (act === 'deldoc') await api(`/documents/${id}`, { method: 'DELETE' });
+    if (act === 'submit') { await api(`/applications/${id}/submit`, { method: 'POST' }); flash('Submitted for review.', true); }
+    if (act === 'approve' || act === 'reject') {
+      await api(`/admin/applications/${id}/decision`, { method: 'POST', json: { decision: act, note: $('#n' + id).value } });
+    }
+    if (act === 'delnews') await api(`/admin/news/${id}`, { method: 'DELETE' });
+    await render2();
+  });
+});
+const render2 = () => (me.role === 'admin' ? renderAdmin() : renderCompany());
+
+document.addEventListener('submit', e => {
+  e.preventDefault();
+  const f = e.target, fd = new FormData(f), j = Object.fromEntries(fd);
+  run(async () => {
+    if (f.id === 'authf') { try { return setSession(await api('/auth/' + mode, { method: 'POST', json: j })); } catch (er) { return authmsg(er.message === 'Wrong email or password.' ? 'Authentication failed' : er.message); } }
+    if (f.id === 'regf') {
+      const rerr = t => { const m = $('#rerr'); m.textContent = t; m.style.display = 'block'; };
+      try {
+        const d = await api('/auth/register', { method: 'POST', json: { email: j.email, password: j.password } });
+        token = d.token; me = d.user; localStorage.setItem('t', token);
+        const desc = [['Full name', j.full_name], ['Manager', j.manager], ['Fayda ID', j.fayda], ['Legal condition', j.legal], ['Region', j.region], ['Zone/Sub city', j.zone],
+          ['Woreda', j.woreda], ['Kebele', j.kebele], ['Phone', j.phone], ['Manager (Amharic)', j.manager_am], ['Company (Amharic)', j.company_am]]
+          .filter(x => x[1]).map(x => x[0] + ': ' + x[1]).join(' · ').slice(0, 1000);
+        const a = await api('/applications', { method: 'POST', json: { company: j.company, tin: j.tin, description: desc } });
+        const logo = fd.get('logo');
+        if (logo && logo.size) { const u = new FormData(); u.append('kind', 'other'); u.append('file', logo); await api(`/applications/${a.id}/documents`, { method: 'POST', body: u }); }
+        sessionStorage.removeItem('tin');
+        await render();
+        flash('Registration complete. Add your trade license number, then submit for review.', true);
+      } catch (er) { rerr(er.message); }
+      return;
+    }
+    if (f.classList.contains('appf')) {
+      const id = f.dataset.id;
+      await api(id ? `/applications/${id}` : '/applications', { method: id ? 'PUT' : 'POST', json: j });
+      flash('Saved.', true);
+    }
+    if (f.classList.contains('upf')) { await api(`/applications/${f.dataset.id}/documents`, { method: 'POST', body: fd }); flash('Uploaded.', true); }
+    if (f.id === 'newsf') await api('/admin/news', { method: 'POST', json: j });
+    await render2();
+  });
+});
+
+render();
+</script>
+<footer class="pf">© 2026 Digital Service Competency Certification</footer>
+</body>
+</html>

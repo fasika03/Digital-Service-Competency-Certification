@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Digital Service Competency Certification</title>
+<style>
+:root{--bg:#fff;--bg2:#fff;--fg:#14231b;--mut:#5b6b62;--pri:#2563eb;--pri2:#1d4ed8;--acc:#f2b705;--card:#fff;--bd:#dbe7df;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-theme="dark"]{--bg:#0e1612;--bg2:#13201a;--fg:#e7f1ea;--mut:#9bb0a3;--pri:#2fbf80;--pri2:#1f9a65;--card:#172720;--bd:#25382f}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:inherit;text-decoration:none}
+.w{max-width:1080px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);border-bottom:1px solid var(--bd);z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px}
+.logo{width:34px;height:34px;border-radius:8px;background:var(--pri);color:#fff;display:grid;place-items:center;font-size:18px}
+nav{display:flex;gap:18px;font-size:14px}
+nav a{color:var(--mut)}nav a:hover{color:var(--pri)}
+@media(max-width:820px){nav{display:none}.brand span{font-size:13px}}
+.btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:600;background:var(--pri);color:#fff;border:2px solid var(--pri)}
+.btn:hover{background:var(--pri2)}
+.btn.o{background:transparent;color:var(--pri)}
+.hero{background:var(--bg);padding:64px 0 48px;text-align:center}
+.hero h1{font-size:clamp(28px,5vw,46px);line-height:1.15;margin:0 0 14px}
+.hero p{max-width:620px;margin:0 auto 26px;color:var(--mut);font-size:18px}
+.cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:40px}
+.stat{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:18px}
+.stat b{display:block;font-size:30px;color:var(--pri)}.stat span{color:var(--mut);font-size:14px}
+section{padding:54px 0}
+section.alt{background:var(--bg2);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)}
+h2{font-size:28px;margin:0 0 6px}.sub{color:var(--mut);margin:0 0 28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:20px}
+.card h3{margin:8px 0 6px;font-size:18px}.card p{margin:0;color:var(--mut);font-size:15px}
+.num{width:38px;height:38px;border-radius:50%;background:var(--acc);color:#222;font-weight:700;display:grid;place-items:center}
+.chk{color:var(--pri);font-size:22px;font-weight:700}
+.date{font-size:12px;color:var(--pri);font-weight:600;text-transform:uppercase}
+.tools{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+input{flex:1;min-width:200px;padding:12px 14px;border-radius:10px;border:1px solid var(--bd);background:var(--card);color:var(--fg);font:inherit}
+.tbl{overflow-x:auto;border:1px solid var(--bd);border-radius:14px;background:var(--card)}
+table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--bd);font-size:15px}
+th{background:var(--bg2);font-size:13px;color:var(--mut)}
+tr:last-child td{border:0}
+.tag{background:var(--bg2);color:var(--pri);padding:2px 10px;border-radius:99px;font-size:12px;font-weight:600}
+.note{font-size:13px;color:var(--mut);margin-top:10px}
+footer{background:#fff;color:var(--mut);border-top:1px solid var(--bd);padding:40px 0 28px;font-size:14px}
+footer .grid{margin-bottom:24px}footer h4{margin:0 0 8px;color:var(--fg)}footer a{display:block;color:var(--mut);margin:4px 0}
+.copy{border-top:1px solid var(--bd);padding-top:16px;color:var(--mut)}
+.rcard{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:20px;margin-bottom:18px}
+.srow{display:flex;gap:10px;margin-bottom:16px}.srow input{flex:1;min-width:0}
+.filters{background:#f8fafc;border:1px solid var(--bd);border-radius:14px;padding:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
+.filters label{display:block;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#334155;margin-bottom:6px}
+.filters input,.filters select{width:100%;min-width:0}
+button.btn{font:inherit;font-weight:600;cursor:pointer}
+button.gray{background:#4b5563;color:#fff;border:0;border-radius:10px;font:inherit;font-weight:600;padding:12px;cursor:pointer;align-self:end}
+button.gray:hover{background:#374151}
+.tag{background:#eaf1ff}.tag.exp{background:#fdecea;color:#b3261e}
+</style>
+</head>
+<body>
+<header><div class="w nav">
+<a class="brand" href="#"><div class="logo">✓</div><span>Digital Service Competency Certification</span></a>
+<nav><a href="#">Home</a><a href="#about">About</a><a href="#news">News</a><a href="#how">How To</a><a href="#registry">Verify Register</a><a href="#contact">Contact</a></nav>
+<a class="btn" href="/app.html?signup" style="padding:8px 16px;font-size:14px">Apply</a>
+</div></header>
+
+<div class="hero"><div class="w">
+<h1>Digital Service Competency Certification</h1>
+<p>Get certified as a digital business in Ethiopia. Verify competency, comply with regulations, and seamlessly integrate with payment and logistics networks.</p>
+<div class="cta"><a class="btn" href="/app.html?signup">Apply Now →</a><a class="btn o" href="#registry">Verify Register →</a></div>
+<div class="stats">
+<div class="stat"><b id="s1">0</b><span>Certified companies</span></div>
+<div class="stat"><b id="s2">0</b><span>Applications received</span></div>
+<div class="stat"><b id="s3">0</b><span>Pending reviews</span></div>
+<div class="stat"><b id="s4">0</b><span>Avg. days to certify</span></div>
+</div>
+</div></div>
+
+<section id="about"><div class="w">
+<h2>Benefits of Competency Certificate</h2><p class="sub">Why digital businesses certify.</p>
+<div class="grid">
+<div class="card"><div class="chk">✓</div><h3>Regulatory Compliance</h3><p>Ensure legal compliance with Ethiopian digital commerce frameworks.</p></div>
+<div class="card"><div class="chk">✓</div><h3>Ecosystem Trust &amp; Credibility</h3><p>Build trust with customers, investors, banks, and other digital commerce stakeholders.</p></div>
+<div class="card"><div class="chk">✓</div><h3>Integration Opportunities</h3><p>Integrate easily with certified local payment gateways and logistics companies.</p></div>
+<div class="card"><div class="chk">✓</div><h3>Directory Visibility</h3><p>Get listed in the national public registry of competent digital businesses.</p></div>
+</div></div></section>
+
+<section id="how" class="alt"><div class="w">
+<h2>How to get a Digital Service Competency Certificate</h2><p class="sub">Four simple steps.</p>
+<div class="grid">
+<div class="card"><div class="num">1</div><h3>Register &amp; Create Profile</h3><p>Create your account and build your company digital profile with contact details.</p></div>
+<div class="card"><div class="num">2</div><h3>Upload Required Documents</h3><p>Submit trade licenses, tax credentials, and technical documents for evaluation.</p></div>
+<div class="card"><div class="num">3</div><h3>Technical Review &amp; Assessment</h3><p>Our technical committee reviews your application and conducts a validation audit.</p></div>
+<div class="card"><div class="num">4</div><h3>Download Certificate</h3><p>Upon approval, download and print your official Digital Service Competency Certificate.</p></div>
+</div>
+<div style="text-align:center;margin-top:28px"><a class="btn" href="/app.html?signup">Apply Now →</a></div>
+</div></section>
+
+<section id="news"><div class="w">
+<h2>Latest News &amp; Updates</h2><p class="sub">Announcements from the certification office.</p>
+<div class="grid" id="newsgrid"></div>
+<p style="margin-top:20px"></p>
+</div></section>
+
+<section id="registry" class="alt"><div class="w">
+<h2>Verify Register</h2><p class="sub">Verify a company's certificate or search the public register.</p>
+<div class="rcard">
+<div class="srow"><input id="q" placeholder="Search by company name or certificate number" aria-label="Search register"><button class="btn" id="go">Search</button></div>
+<div class="filters">
+<div><label for="st">Status</label><select id="st"><option value="">All Statuses</option><option value="active">Active</option><option value="expired">Expired</option></select></div>
+<div><label for="if">Issue date from</label><input type="date" id="if"></div>
+<div><label for="it">Issue date to</label><input type="date" id="it"></div>
+<div><label for="ef">Expiry date from</label><input type="date" id="ef"></div>
+<div><label for="et">Expiry date to</label><input type="date" id="et"></div>
+<button class="gray" id="reset">Reset Filters</button>
+</div></div>
+<div class="tbl"><table style="min-width:760px"><thead><tr><th>Company</th><th>Sector</th><th>Certificate No.</th><th>Issued</th><th>Expires</th><th>Status</th></tr></thead><tbody id="rows"></tbody></table></div>
+<p class="note" id="count"></p>
+</div></section>
+
+<footer id="contact"><div class="w">
+<div class="grid">
+<div><h4>Digital Service Competency Certification</h4><p>Building digital trust in Ethiopia.</p></div>
+<div><h4>Useful Links</h4><a href="#">Ethiopian Revenue and Customs Authority</a><a href="#">Ministry of Agriculture (MOA)</a><a href="#">Ministry of Finance</a><a href="#">Ministry of Foreign Affairs</a><a href="#">Ministry of Trade and Regional Integration</a></div>
+<div><h4>Get In Touch</h4><p>📞 +251 000 000 000<br>✉️ info@example.gov.et</p><h4 style="margin-top:12px">Working Hours</h4><p>Monday to Friday<br>8:00 am – 5:00 pm</p></div>
+</div>
+<div class="copy">© 2026 Digital Service Competency Certification</div>
+</div></footer>
+
+<script>
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const get=p=>fetch("/api"+p).then(r=>r.json());
+const $=i=>document.getElementById(i),fmt=d=>d?d.split("-").reverse().join("/"):"";
+function row(c){const e=c.status==="expired";return `<tr><td><b>${esc(c.company)}</b></td><td>${esc(c.sector)}</td><td>${esc(c.cert_no)}</td><td>${fmt(c.issue_date)}</td><td>${fmt(c.expires_at)}</td><td><span class="tag${e?" exp":""}">${e?"Expired":"Active"}</span></td></tr>`}
+function show(l){$("rows").innerHTML=l.map(row).join("")||'<tr><td colspan="6">No results</td></tr>';$("count").textContent=l.length+" result"+(l.length===1?"":"s")}
+const ids=["q","st","if","it","ef","et"];
+async function draw(){const p=new URLSearchParams({q:$("q").value,status:$("st").value,issueFrom:$("if").value,issueTo:$("it").value,expFrom:$("ef").value,expTo:$("et").value});
+try{show(await get("/registry?"+p))}catch{$("rows").innerHTML='<tr><td colspan="6">Register unavailable</td></tr>'}}
+ids.forEach(i=>$(i).addEventListener(i==="q"?"input":"change",draw));
+$("go").onclick=draw;$("reset").onclick=()=>{ids.forEach(i=>$(i).value="");draw()};draw();
+get("/stats").then(s=>{s1.textContent=s.certified;s2.textContent=s.applications;s3.textContent=s.pending;s4.textContent=s.avgDays}).catch(()=>{});
+get("/news").then(n=>{newsgrid.innerHTML=n.map(x=>`<div class="card"><div class="date">${esc(x.created_at.slice(0,10))}</div><h3>${esc(x.title)}</h3><p>${esc(x.body)}</p></div>`).join("")||'<p class="sub">No news yet.</p>'}).catch(()=>{});
+const v=new URLSearchParams(location.search).get("verify");
+if(v)get("/verify/"+encodeURIComponent(v)).then(r=>alert(r.valid?"Valid certificate: "+r.company:"Certificate not found")).catch(()=>alert("Certificate not found"));
+</script>
+</body>
+</html>
