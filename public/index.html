@@ -94,6 +94,23 @@ button.gray:hover{background:#374151}
 .cta2 .ghost{background:transparent!important;color:#fff!important;border:2px solid #fff!important;border-radius:8px!important;padding:18px 40px;font-size:24px}
 .hlogo img{display:block;width:min(100%,380px);margin:0 auto;border-radius:50%;box-shadow:0 10px 40px rgba(0,0,0,.3)}
 @media(max-width:1000px){.hn,.lr{display:none}.burger{display:block}.ht{font-size:18px}.hgrid{grid-template-columns:1fr;padding:40px 20px}.hlogo{order:-1}.hlogo img{width:200px}.cta2 .lime,.cta2 .ghost{font-size:18px;padding:14px 26px}}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.col{scroll-margin-top:110px}.col h2{font-size:24px;line-height:1.3}
+.list{display:flex;flex-direction:column;gap:14px}
+.item{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:16px 18px}
+.item h3{margin:0 0 4px;font-size:18px}.item p{margin:0;color:var(--mut);font-size:15px}
+.item .num{flex:none}.item .chk{flex:none;width:38px;height:38px;border-radius:50%;background:#eaf1ff;display:grid;place-items:center;font-size:20px}
+@media(max-width:860px){.two{grid-template-columns:1fr;gap:34px}}
+.lh{text-align:center;font-size:44px;color:#0d4a5e;margin:0 0 40px;line-height:1.2}
+.lsub{text-align:center;color:#555;font-size:20px;margin:0 0 44px}
+.lgrid{display:flex;flex-wrap:wrap;gap:60px;justify-content:center}
+.lc{width:255px;height:165px;background:#fff;border:1px solid #e3edf5;border-radius:24px;padding:30px;box-shadow:0 8px 24px rgba(10,110,189,.06);transition:transform .2s,border-color .2s,box-shadow .2s;display:flex}
+.lc:hover{transform:translateY(-8px);border-color:#7ab6e8;box-shadow:0 14px 30px rgba(10,110,189,.15)}
+.lc div{flex:1;min-width:0;background:#f3f5f8;border-radius:16px;display:grid;place-items:center;font-size:20px;font-weight:600;color:#334155;text-align:center;padding:8px;overflow:hidden}
+.lhr{border:0;border-top:1px solid #e3e8ee;margin:60px 0}
+.lvall{display:inline-flex;gap:12px;align-items:center;background:#0a6ebd;color:#fff;border-radius:10px;padding:22px 54px;font-size:26px;box-shadow:0 8px 20px rgba(10,110,189,.3)}.lvall:hover{background:#085a9c;color:#fff}
+.lnote{color:#555;font-size:20px;margin:18px 0 0}
+@media(max-width:700px){.lh{font-size:32px}.lsub{font-size:17px;margin-bottom:28px}.lgrid{gap:20px}.lc{width:100%;max-width:300px}.lvall{font-size:18px;padding:16px 26px}.lnote{font-size:16px}.lhr{margin:36px 0}}
 </style>
 </head>
 <body>
@@ -106,24 +123,9 @@ button.gray:hover{background:#374151}
 <div class="stat"><b id="s3">0</b><span>Pending reviews</span></div>
 <div class="stat"><b id="s4">0</b><span>Avg. days to certify</span></div>
 </div></div></section>
-<section id="about"><div class="w">
-<h2>Benefits of Competency Certificate</h2><p class="sub">Why digital businesses certify.</p>
-<div class="grid">
-<div class="card"><div class="chk">✓</div><h3>Regulatory Compliance</h3><p>Ensure legal compliance with Ethiopian digital commerce frameworks.</p></div>
-<div class="card"><div class="chk">✓</div><h3>Ecosystem Trust &amp; Credibility</h3><p>Build trust with customers, investors, banks, and other digital commerce stakeholders.</p></div>
-<div class="card"><div class="chk">✓</div><h3>Integration Opportunities</h3><p>Integrate easily with certified local payment gateways and logistics companies.</p></div>
-<div class="card"><div class="chk">✓</div><h3>Directory Visibility</h3><p>Get listed in the national public registry of competent digital businesses.</p></div>
-</div></div></section>
-
-<section id="how" class="alt"><div class="w">
-<h2>How to get a Digital Service Competency Certificate</h2><p class="sub">Four simple steps.</p>
-<div class="grid">
-<div class="card"><div class="num">1</div><h3>Register &amp; Create Profile</h3><p>Create your account and build your company digital profile with contact details.</p></div>
-<div class="card"><div class="num">2</div><h3>Upload Required Documents</h3><p>Submit trade licenses, tax credentials, and technical documents for evaluation.</p></div>
-<div class="card"><div class="num">3</div><h3>Technical Review &amp; Assessment</h3><p>Our technical committee reviews your application and conducts a validation audit.</p></div>
-<div class="card"><div class="num">4</div><h3>Download Certificate</h3><p>Upon approval, download and print your official Digital Service Competency Certificate.</p></div>
-</div>
-<div style="text-align:center;margin-top:28px"><a class="btn" href="/app.html?signup">Apply Now →</a></div>
+<section><div class="w two">
+<div class="col" id="how"><h2>How to get a Digital Service Competency Certificate</h2><p class="sub">Four simple steps.</p><div class="list"><div class="item"><div class="num">1</div><div><h3>Register &amp; Create Profile</h3><p>Create your account and build your company digital profile with contact details.</p></div></div><div class="item"><div class="num">2</div><div><h3>Upload Required Documents</h3><p>Submit trade licenses, tax credentials, and technical documents for evaluation.</p></div></div><div class="item"><div class="num">3</div><div><h3>Technical Review &amp; Assessment</h3><p>Our technical committee reviews your application and conducts a validation audit.</p></div></div><div class="item"><div class="num">4</div><div><h3>Download Certificate</h3><p>Upon approval, download and print your official Digital Service Competency Certificate.</p></div></div></div><div style="margin-top:22px"><a class="btn" href="/app.html?signup">Apply Now →</a></div></div>
+<div class="col" id="about"><h2>Benefits of Competency Certificate</h2><p class="sub">Why digital businesses certify.</p><div class="list"><div class="item"><div class="chk">✓</div><div><h3>Regulatory Compliance</h3><p>Ensure legal compliance with Ethiopian digital commerce frameworks.</p></div></div><div class="item"><div class="chk">✓</div><div><h3>Ecosystem Trust &amp; Credibility</h3><p>Build trust with customers, investors, banks, and other digital commerce stakeholders.</p></div></div><div class="item"><div class="chk">✓</div><div><h3>Integration Opportunities</h3><p>Integrate easily with certified local payment gateways and logistics companies.</p></div></div><div class="item"><div class="chk">✓</div><div><h3>Directory Visibility</h3><p>Get listed in the national public registry of competent digital businesses.</p></div></div></div></div>
 </div></section>
 
 <section id="news"><div class="w">
@@ -133,6 +135,14 @@ button.gray:hover{background:#374151}
 </div></section>
 <div id="nm" class="nmodal"><div class="nbox"><button class="nx" id="nx" aria-label="Close">×</button><img id="nimg" alt=""><div class="nd" id="ndate" style="margin-top:14px"></div><h3 id="ntitle"></h3><p id="nbody"></p></div></div>
 
+<section id="licensed"><div class="w">
+<h2 class="lh">Licensed Companies</h2>
+<p class="lsub">Companies officially registered and licensed under our system.</p>
+<div class="lgrid" id="lgrid"></div>
+<hr class="lhr">
+<div style="text-align:center"><a class="lvall" href="#registry">View All Licensed Companies <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<p class="lnote">Browse all companies, search, filter, and submit complaints if needed</p></div>
+</div></section>
 <section id="registry" class="alt"><div class="w">
 <h2>Verify Register</h2><p class="sub">Verify a company's certificate or search the public register.</p>
 <div class="rcard">
@@ -192,6 +202,12 @@ fetch("/api/news").then(r=>r.json()).then(n=>{items=n.map(x=>({title:x.title,bod
 g("bg").onclick=()=>g("mm").classList.toggle("on");
 document.querySelectorAll(".dd>a").forEach(a=>a.addEventListener("click",()=>a.parentElement.classList.toggle("open")));
 document.querySelectorAll("#mm a").forEach(a=>a.addEventListener("click",()=>g("mm").classList.remove("on")));
+})();
+</script>
+<script>
+(()=>{const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const draw=l=>{document.getElementById("lgrid").innerHTML=l.map(n=>`<div class="lc"><div>${esc(n)}</div></div>`).join("")||'<p style="text-align:center;color:#5b6b62">No licensed companies yet.</p>'};
+fetch("/api/registry?status=active").then(r=>r.json()).then(d=>draw(d.slice(0,4).map(c=>c.company))).catch(()=>draw([]));
 })();
 </script>
 </body>
