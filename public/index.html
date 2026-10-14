@@ -60,27 +60,52 @@ button.btn{font:inherit;font-weight:600;cursor:pointer}
 button.gray{background:#4b5563;color:#fff;border:0;border-radius:10px;font:inherit;font-weight:600;padding:12px;cursor:pointer;align-self:end}
 button.gray:hover{background:#374151}
 .tag{background:#eaf1ff}.tag.exp{background:#fdecea;color:#b3261e}
+.nh{text-align:center;font-size:28px;color:#333;margin:0 0 28px}
+.ngrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.ncard{background:#fff;border:1px solid #e3edf5;border-radius:24px;padding:12px 12px 26px;box-shadow:0 10px 30px rgba(10,110,189,.08);display:flex;flex-direction:column}
+.ncard img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:14px;display:block}
+.nbody{padding:22px 16px 0;display:flex;flex-direction:column;flex:1}
+.nd{display:flex;align-items:center;gap:10px;color:#555;font-size:16px}
+.nt{color:#0a6ebd;font-size:22px;font-weight:700;line-height:1.35;margin:16px 0 12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ne{color:#555;font-size:17px;line-height:1.7;margin:0 0 18px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.rm{color:#2b7bbd;text-decoration:underline;background:none;border:0;padding:0;cursor:pointer;font:inherit;font-size:18px;align-self:flex-start;margin-top:auto}
+.vm{background:#fff;color:#0a6ebd;border:1.5px solid #0a6ebd;border-radius:999px;padding:12px 26px;font:inherit;font-size:17px;cursor:pointer}.vm:hover{background:#eef6fb}
+.nmodal{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:flex-start;justify-content:center;padding:16px;overflow:auto;z-index:60}.nmodal.on{display:flex}
+.nbox{background:#fff;border-radius:18px;max-width:640px;width:100%;margin:16px auto;padding:16px;position:relative;color:#14231b}
+.nbox img{width:100%;border-radius:12px;display:block}.nbox h3{color:#0a6ebd;font-size:24px;margin:14px 0 8px}.nbox p{line-height:1.7;color:#333;white-space:pre-wrap;margin:8px 0 0}
+.nbox .nx{position:absolute;right:26px;top:26px;background:rgba(255,255,255,.92);border:0;border-radius:50%;width:34px;height:34px;font-size:24px;line-height:1;cursor:pointer}
+.hd{max-width:1280px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.hl{display:flex;align-items:center;gap:16px;min-width:0}.hl>img{width:72px;height:66px;object-fit:contain;flex:none}
+.ht{font-size:26px;color:#0a6ebd;line-height:1.2}
+.hn{display:flex;gap:30px;margin-top:10px;font-size:18px;flex-wrap:wrap}
+.hn a{color:#222;padding:6px 0;border-bottom:3px solid transparent;cursor:pointer;display:inline-flex;align-items:center}
+.hn a.on,.hn a:hover{border-bottom-color:#7ac143;color:#222}
+.dd{position:relative}.dd .menu{display:none;position:absolute;top:100%;left:0;background:#fff;border:1px solid var(--bd);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.12);min-width:190px;padding:6px;z-index:5}
+.dd:hover .menu,.dd.open .menu{display:block}.menu a{display:block;padding:8px 12px;border:0!important;font-size:16px;border-radius:6px}.menu a:hover{background:#f1f6fb}
+.lr{background:linear-gradient(180deg,#1a8cff,#0a6ee0)!important;color:#fff!important;border:0!important;border-radius:999px!important;padding:16px 28px;font-size:19px;font-weight:600;box-shadow:0 6px 16px rgba(10,110,224,.35);white-space:nowrap}
+.burger{display:none;background:none;border:0;font-size:32px;cursor:pointer;color:#222}
+.mm{display:none;padding:6px 24px 18px;border-top:1px solid var(--bd)}.mm.on{display:block}.mm a{display:block;padding:10px 0;font-size:17px;color:#222}
+.hero2{background:linear-gradient(120deg,#0b3a52 0%,#0a4f7a 45%,#0a6ebd 100%);color:#fff}
+.hgrid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr;gap:30px;align-items:center;padding:70px 24px}
+.hero2 h1{font-size:clamp(34px,5vw,60px);line-height:1.15;margin:0 0 26px}
+.hero2 p{font-size:20px;line-height:1.8;color:#e6f0f7;max-width:760px;margin:0 0 34px}
+.cta2{display:flex;gap:18px;flex-wrap:wrap}
+.cta2 .lime{background:#7ac143!important;color:#fff!important;border:0!important;border-radius:8px!important;padding:20px 52px;font-size:24px;box-shadow:0 8px 20px rgba(0,0,0,.25)}
+.cta2 .ghost{background:transparent!important;color:#fff!important;border:2px solid #fff!important;border-radius:8px!important;padding:18px 40px;font-size:24px}
+.hlogo img{display:block;width:min(100%,380px);margin:0 auto;border-radius:50%;box-shadow:0 10px 40px rgba(0,0,0,.3)}
+@media(max-width:1000px){.hn,.lr{display:none}.burger{display:block}.ht{font-size:18px}.hgrid{grid-template-columns:1fr;padding:40px 20px}.hlogo{order:-1}.hlogo img{width:200px}.cta2 .lime,.cta2 .ghost{font-size:18px;padding:14px 26px}}
 </style>
 </head>
 <body>
-<header><div class="w nav">
-<a class="brand" href="#"><div class="logo">✓</div><span>Digital Service Competency Certification</span></a>
-<nav><a href="#">Home</a><a href="#about">About</a><a href="#news">News</a><a href="#how">How To</a><a href="#registry">Verify Register</a><a href="#contact">Contact</a></nav>
-<a class="btn" href="/app.html?signup" style="padding:8px 16px;font-size:14px">Apply</a>
-</div></header>
+<header><div class="hd"><div class="hl"><img src="/logo.jpg" alt="MInT logo"><div><div class="ht">Digital Service Competency Certification</div><div class="hn"><a class="on" href="#top">Home</a><div class="dd"><a>About Us <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="margin-left:6px"><path d="M2 4l4 4 4-4"/></svg></a><div class="menu"><a href="#about">Benefits</a><a href="#contact">Contact</a></div></div><a href="#news">News</a><div class="dd"><a>How To <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="margin-left:6px"><path d="M2 4l4 4 4-4"/></svg></a><div class="menu"><a href="#how">How to apply</a><a href="#registry">Verify a company</a></div></div><a href="#about">Resources</a><a href="https://degi.gov.et" target="_blank" rel="noopener">Digital Economy Reporting</a><a href="#registry">Certified Companies</a><a href="#contact">Contact US</a></div></div></div><a class="btn lr" href="/app.html">Login / Register →</a><button class="burger" id="bg" aria-label="Menu">☰</button></div><div class="mm" id="mm"><a href="#top">Home</a><a href="#about">About Us</a><a href="#news">News</a><a href="#how">How To</a><a href="#about">Resources</a><a href="https://degi.gov.et" target="_blank" rel="noopener">Digital Economy Reporting</a><a href="#registry">Certified Companies</a><a href="#contact">Contact US</a><a class="btn lr" href="/app.html" style="display:inline-block;margin-top:10px;font-size:17px;padding:12px 22px">Login / Register →</a></div></header>
 
-<div class="hero"><div class="w">
-<h1>Digital Service Competency Certification</h1>
-<p>Get certified as a digital business in Ethiopia. Verify competency, comply with regulations, and seamlessly integrate with payment and logistics networks.</p>
-<div class="cta"><a class="btn" href="/app.html?signup">Apply Now →</a><a class="btn o" href="#registry">Verify Register →</a></div>
-<div class="stats">
+<div class="hero2" id="top"><div class="hgrid"><div><h1>Digital Service Competency Certification</h1><p>Get certified as a digital business in Ethiopia. Verify competency, comply with regulations, and seamlessly integrate with payment and logistics networks.</p><div class="cta2"><a class="btn lime" href="/app.html?signup">Apply Now →</a><a class="btn ghost" href="#registry">Verify Registry →</a></div></div><div class="hlogo"><img src="/hero-logo.jpg" alt="MInT"></div></div></div>
+<section style="padding:36px 0 0"><div class="w"><div class="stats">
 <div class="stat"><b id="s1">0</b><span>Certified companies</span></div>
 <div class="stat"><b id="s2">0</b><span>Applications received</span></div>
 <div class="stat"><b id="s3">0</b><span>Pending reviews</span></div>
 <div class="stat"><b id="s4">0</b><span>Avg. days to certify</span></div>
-</div>
-</div></div>
-
+</div></div></section>
 <section id="about"><div class="w">
 <h2>Benefits of Competency Certificate</h2><p class="sub">Why digital businesses certify.</p>
 <div class="grid">
@@ -102,10 +127,11 @@ button.gray:hover{background:#374151}
 </div></section>
 
 <section id="news"><div class="w">
-<h2>Latest News &amp; Updates</h2><p class="sub">Announcements from the certification office.</p>
-<div class="grid" id="newsgrid"></div>
-<p style="margin-top:20px"></p>
+<h2 class="nh">Latest News &amp; Updates</h2>
+<div class="ngrid" id="newsgrid"></div>
+<div style="text-align:center;margin-top:30px"><button class="vm" id="vmore">View More News →</button></div>
 </div></section>
+<div id="nm" class="nmodal"><div class="nbox"><button class="nx" id="nx" aria-label="Close">×</button><img id="nimg" alt=""><div class="nd" id="ndate" style="margin-top:14px"></div><h3 id="ntitle"></h3><p id="nbody"></p></div></div>
 
 <section id="registry" class="alt"><div class="w">
 <h2>Verify Register</h2><p class="sub">Verify a company's certificate or search the public register.</p>
@@ -144,9 +170,29 @@ try{show(await get("/registry?"+p))}catch{$("rows").innerHTML='<tr><td colspan="
 ids.forEach(i=>$(i).addEventListener(i==="q"?"input":"change",draw));
 $("go").onclick=draw;$("reset").onclick=()=>{ids.forEach(i=>$(i).value="");draw()};draw();
 get("/stats").then(s=>{s1.textContent=s.certified;s2.textContent=s.applications;s3.textContent=s.pending;s4.textContent=s.avgDays}).catch(()=>{});
-get("/news").then(n=>{newsgrid.innerHTML=n.map(x=>`<div class="card"><div class="date">${esc(x.created_at.slice(0,10))}</div><h3>${esc(x.title)}</h3><p>${esc(x.body)}</p></div>`).join("")||'<p class="sub">No news yet.</p>'}).catch(()=>{});
+
 const v=new URLSearchParams(location.search).get("verify");
 if(v)get("/verify/"+encodeURIComponent(v)).then(r=>alert(r.valid?"Valid certificate: "+r.company:"Certificate not found")).catch(()=>alert("Certificate not found"));
+</script>
+<script>
+(()=>{const g=i=>document.getElementById(i);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fmt=d=>{const [y,m,k]=String(d).slice(0,10).split("-");return k+"/"+m+"/"+y};
+const CAL='<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7ab800" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>';let items=[],shown=3;
+function draw(){g("newsgrid").innerHTML=items.slice(0,shown).map((n,i)=>`<article class="ncard"><img src="${n.img}" alt="" loading="lazy"><div class="nbody"><div class="nd">${CAL}<span>${fmt(n.date)}</span></div><h3 class="nt">${esc(n.title)}</h3><p class="ne">${esc(n.body)}</p><button class="rm" data-i="${i}">Read More →</button></div></article>`).join("")||'<p style="text-align:center;color:#5b6b62">No news yet.</p>';g("vmore").style.display=shown<items.length?"inline-block":"none"}
+g("newsgrid").addEventListener("click",e=>{const b=e.target.closest(".rm");if(!b)return;const n=items[+b.dataset.i];g("nimg").src=n.img;g("ndate").innerHTML=CAL+"<span>"+fmt(n.date)+"</span>";g("ntitle").textContent=n.title;g("nbody").textContent=n.body;g("nm").classList.add("on")});
+g("vmore").onclick=()=>{shown+=3;draw()};
+const shut=()=>g("nm").classList.remove("on");g("nx").onclick=shut;g("nm").addEventListener("click",e=>{if(e.target.id==="nm")shut()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")shut()});
+fetch("/api/news").then(r=>r.json()).then(n=>{items=n.map(x=>({title:x.title,body:x.body,date:x.created_at,img:"/news.jpg"}));draw()}).catch(()=>draw());
+})();
+</script>
+<script>
+(()=>{const g=i=>document.getElementById(i);
+g("bg").onclick=()=>g("mm").classList.toggle("on");
+document.querySelectorAll(".dd>a").forEach(a=>a.addEventListener("click",()=>a.parentElement.classList.toggle("open")));
+document.querySelectorAll("#mm a").forEach(a=>a.addEventListener("click",()=>g("mm").classList.remove("on")));
+})();
 </script>
 </body>
 </html>
