@@ -181,3 +181,9 @@ footer.ft a{display:block;color:#444;margin:0 0 16px;font-size:18px;line-height:
 .tcard h3{color:#0a6ee0;font-size:30px;margin:0 0 20px;font-weight:600}.tcard span{color:#555;font-size:24px}
 .dd .menu{min-width:300px;padding:10px 0}.menu a{padding:14px 26px;font-size:18px;border-radius:0}
 .dd:hover>a,.dd.open>a{color:#0a6ee0}
+
+.hw{background:#f8fafc;max-width:1500px;margin:0 auto;padding:90px 48px 110px}
+.hw h1{text-align:center;font-size:clamp(32px,4.2vw,60px);color:#222;margin:0 0 56px;font-weight:600;line-height:1.15}
+.hsteps{max-width:1260px;margin:0 auto;display:flex;flex-direction:column;gap:24px}
+.hstep{display:flex;align-items:center;gap:18px;background:#fff;border-radius:14px;padding:0 26px;min-height:84px;box-shadow:0 4px 18px rgba(10,60,100,.06);font-size:clamp(17px,1.5vw,24px);color:#444}
+.hstep b{flex:none;width:36px;height:36px;border-radius:50%;background:#0a6ebd;color:#fff;display:grid;place-items:center;font-size:18px}
