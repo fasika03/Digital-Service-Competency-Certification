@@ -25,3 +25,6 @@ footer.ft a{display:block;color:#444;margin:0 0 16px;font-size:18px;line-height:
 .wh{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid #d9dde3;padding-bottom:10px;font-size:18px}.wh span:first-child{color:#555}.wh span:last-child{color:#111}
 .ftb{border-top:1px solid #dde1e6;margin-top:44px;padding-top:18px;color:#666;font-size:14px;text-align:center}
 @media(max-width:900px){.ftg{grid-template-columns:1fr 1fr}}@media(max-width:560px){.ftg{grid-template-columns:1fr}}
+
+.dd .menu{min-width:300px;padding:10px 0}.menu a{padding:14px 26px;font-size:18px;border-radius:0}
+.dd:hover>a,.dd.open>a{color:#0a6ee0}
