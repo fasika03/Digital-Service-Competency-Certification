@@ -16,6 +16,19 @@ const SECRET = process.env.JWT_SECRET || (console.warn('WARNING: JWT_SECRET not 
 const UPLOADS = path.join(__dirname, 'uploads');
 fs.mkdirSync(UPLOADS, { recursive: true });
 
+// Public downloadable resources (used by resources.html): public/files/
+const PUBLIC_DIR = path.join(__dirname, 'public');
+const FILES_DIR = path.join(PUBLIC_DIR, 'files');
+fs.mkdirSync(FILES_DIR, { recursive: true });
+const RESOURCE_FILES = [
+  'Personal_Data_Protection_Proclamation.pdf',
+  'sample-picture.png',
+  'sample-resource.pdf',
+];
+for (const f of RESOURCE_FILES) {
+  if (!fs.existsSync(path.join(FILES_DIR, f))) console.warn(`NOTE: resource file missing: public/files/${f}`);
+}
+
 // ---------- Database ----------
 const db = new Database(process.env.DB_FILE || path.join(__dirname, 'data.db'));
 db.pragma('journal_mode = WAL');
@@ -58,7 +71,16 @@ app.use(helmet({
   } },
 }));
 app.use(express.json({ limit: '100kb' }));
-app.use(express.static(path.join(__dirname, 'public')));
+
+// Public downloads: /files/<name> forces a download
+app.get('/files/:name', (req, res, next) => {
+  const name = path.basename(req.params.name);
+  const full = path.join(FILES_DIR, name);
+  if (!fs.existsSync(full) || !fs.statSync(full).isFile()) return next();
+  res.download(full, name);
+});
+
+app.use(express.static(PUBLIC_DIR));
 
 const authLimiter = rateLimit({ windowMs: 15 * 60 * 1000, limit: 20, message: { error: 'Too many attempts, try again later.' } });
 

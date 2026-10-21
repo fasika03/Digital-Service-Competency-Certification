@@ -22,14 +22,28 @@ document.querySelectorAll("#mm a").forEach(a=>a.addEventListener("click",()=>g("
 })();
 </script>
 <script>
-(()=>{const R=[{t:"Personal Data Protection Proclamation",d:"Ethiopian Personal Data Protection Proclamation",f:null},{t:"Sample Picture Resource",d:"sample png resource",f:null},{t:"Sample Resource",d:"sample resource",f:null}];
+(()=>{
+/* Put your files in public/files/ and make sure these paths match the file names exactly. */
+const R=[
+  {t:"Personal Data Protection Proclamation",d:"Ethiopian Personal Data Protection Proclamation",f:"/files/Personal_Data_Protection_Proclamation.pdf"},
+  {t:"Sample Picture Resource",d:"sample png resource",f:"/files/sample-picture.png"},
+  {t:"Sample Resource",d:"sample resource",f:"/files/sample-resource.pdf"}
+];
 const g=i=>document.getElementById(i);
 function toast(m){const t=g("toast");t.textContent=m;t.classList.add("on");clearTimeout(toast.h);toast.h=setTimeout(()=>t.classList.remove("on"),2600)}
-function dl(i){const r=R[i];if(!r.f)return toast("This file hasn't been uploaded yet.");const a=document.createElement("a");a.href=r.f;a.download="";document.body.appendChild(a);a.click();a.remove()}
+function dl(i){
+  const r=R[i];
+  if(!r||!r.f)return toast("This file hasn't been uploaded yet.");
+  const a=document.createElement("a");
+  a.href=r.f;
+  a.download=r.f.split("/").pop();
+  document.body.appendChild(a);a.click();a.remove();
+}
 document.querySelectorAll(".rfoot .rd").forEach(b=>b.onclick=()=>dl(+b.dataset.i));
 document.querySelectorAll(".rv").forEach(b=>b.onclick=()=>{const r=R[+b.dataset.i];g("rmt").textContent=r.t;g("rmd").textContent=r.d;g("rmdl").dataset.i=b.dataset.i;g("rm").classList.add("on")});
 g("rmdl").onclick=()=>dl(+g("rmdl").dataset.i);
-g("rmx").onclick=()=>g("rm").classList.remove("on");g("rm").addEventListener("click",e=>{if(e.target.id==="rm")g("rm").classList.remove("on")});
+g("rmx").onclick=()=>g("rm").classList.remove("on");
+g("rm").addEventListener("click",e=>{if(e.target.id==="rm")g("rm").classList.remove("on")});
 document.addEventListener("keydown",e=>{if(e.key==="Escape")g("rm").classList.remove("on")});
 })();
 </script>
